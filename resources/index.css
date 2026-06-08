@@ -1,0 +1,39 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(160deg,
+            #FFE8F5 0%,
+            #EDD5F7 50%,
+            #C9E8FF 100%);
+}
+
+.navbar-cont {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.dot-red {
+    color: #FF5F57;
+}
+
+.dot-yellow {
+    color: #FEBC2E;
+}
+
+.dot-green {
+    color: #28C840;
+}
+
+.h6 {
+    margin-top: 3px;
+    font-size: 1rem;
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
