@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <link href="ecommerce/Assets/Pictures/logo.png" rel="icon">
     <link rel="stylesheet" href="/resources/index.css">
     <title>Document</title>
@@ -16,7 +17,7 @@
 
     <!-- Navbar Menu -->
     <nav class="navbar navbar-expand-lg navbar-cont p-2 position-sticky top-0">
-        <div class="menu-left d-flex flex-row align-items-center justify-content-center">
+        <div class="nav-left d-flex flex-row align-items-center">
             <span class="threedots ms-4 me-2">
                 <span>
                     <i class="bi bi-circle-fill dot-red"></i>
@@ -26,9 +27,85 @@
             </span>
             <span class="navbar-brand mb-0 h6 poppins fw-light">Denz</span>
         </div>
+        <div class="nav-right d-flex flex-row align-items-center ms-auto">
+            <div id="navtime" class="me-2 poppins"></div>
+            <a class="nav-logo me-3" href="#home">
+                <img src="resources/images/Vector.png" style="height: 30px; width: 30px;" />
+            </a>
+        </div>
     </nav>
+
+    <!-- Second Navbar-->
+    <div class="container d-flex flex-column vert-cont mt-3 ms-2 gap-3 position-absolute">
+        <div class="icon d-flex flex-column justify-content-center align-items-center">
+            <a href="#home" class="d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-house-door-fill mt-2"></i>
+                <p class="poppins">Home</p>
+            </a>
+        </div>
+
+        <div class="icon d-flex flex-column justify-content-center align-items-center">
+            <a href="#about" class="d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-person-fill mt-2"></i>
+                <p class="poppins">About Me</p>
+            </a>
+        </div>
+
+        <div class="icon d-flex flex-column justify-content-center align-items-center">
+            <a href="#projects" class="d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-code-slash mt-2"></i>
+                <p class="poppins">Projects</p>
+            </a>
+        </div>
+
+        <div class="icon d-flex flex-column justify-content-center align-items-center">
+            <a href="#contact" class="d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-telephone-plus-fill mt-2"></i>
+                <p class="poppins">Contact</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Home Content -->
+    <main id="home">
+        <section class="d-flex justify-content-center align-items-center home-content">
+
+            <div class="d-flex flex-column">
+                <div class="d-flex justify-content-center mb-3">
+                    <img src="resources/images/aray.jpg" class="circle-photo">
+                </div>
+
+                <div class="text-content">
+                    <h2 class="fredoka">Hey there, I'm <span class="fredoka heroname">Denzel!</span></h2>
+                    <p class="text-muted poppins">Designer & Developer</p>
+                    <div class="d-flex justify-content-center gap-3 mt-3">
+                        <a href="#projects" class="btn btn-light rounded-pill poppins px-4">View Projects</a>
+                        <a href="#contact" class="btn btn-light rounded-pill poppins px-4">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
 
 
 </body>
+<script>
+    (function () {
+        const el = document.getElementById("navtime");
+        if (!el) return;
+        const fmt = new Intl.DateTimeFormat(undefined, {
+            weekday: "long",
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true
+        });
+        const tick = () => {
+            el.textContent = fmt.format(new Date());
+        };
+        tick();
+        setInterval(tick, 30_000);
+    })();
+</script>
 
 </html>
