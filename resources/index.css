@@ -62,7 +62,7 @@ body {
 
 .icon i {
     font-size: 1.7rem;
-    color : #D5C8F5;
+    color: #D5C8F5;
 }
 
 .icon a {
@@ -79,9 +79,8 @@ body {
 }
 
 .home-content {
-    min-height: 60vh;
     width: 100%;
-    margin-top: 60px;
+    margin-top: -55px;
 }
 
 .text-content {
@@ -93,5 +92,151 @@ body {
 }
 
 .fredoka {
-    font-family: 'Fredoka' ;
+    font-family: 'Fredoka';
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    color: white;
+    text-align: center;
+}
+
+.taskbar-icon {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    height: 85px;
+    width: 350px;
+}
+
+
+.side-sticky {
+    position: sticky;
+    top: 50px;
+    width: 0;
+    height: 0;
+    z-index: 100;
+}
+
+.side-sticky .vert-cont {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.socials img {
+    height: 50px;
+    width: 50px;
+}
+
+.icon {
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.icon:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.taskbar-icon a {
+    display: inline-flex;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.taskbar-icon a:hover {
+    transform: translateY(-6px);
+    opacity: 0.75;
+}
+
+.tech-stack:hover {
+    transform: translateY(-6px);
+    opacity: 0.75;
+}
+
+.about-sect {
+    padding-top: 75px;
+}
+
+.projects-sect {
+    padding-top: 75px;
+    padding-bottom: 120px;
+}
+
+.contacts -sect {
+    padding-top: 75px;
+}
+
+.about-card {
+    margin-left: 110px;
+    height: 544px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.projects-card {
+    margin-left: 110px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 20px;
+}
+
+.bar {
+
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+.abt-photo-card {
+    height: 400px;
+    width: auto;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.tech-stack {
+    height: 60px;
+    width: 150px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.tech-icon {
+    height: 40px;
+}
+
+
+.card {
+    width: 370px;
+    height: 400px;
+}
+
+.card-text {
+    overflow: auto;
 }
