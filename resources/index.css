@@ -1,10 +1,15 @@
 body {
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(160deg,
-            #FFE8F5 0%,
-            #EDD5F7 50%,
-            #C9E8FF 100%);
+    background: linear-gradient(160deg, #FFE8F5 0%, #EDD5F7 50%, #C9E8FF 100%);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .navbar-cont {
@@ -14,6 +19,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 12px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
 }
 
 .dot-red {
@@ -134,7 +140,7 @@ body {
 }
 
 .icon {
-    transition: transform 0.15s ease, background 0.15s ease;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.35s ease;
 }
 
 .icon:hover {
@@ -144,7 +150,7 @@ body {
 
 .taskbar-icon a {
     display: inline-flex;
-    transition: transform 0.15s ease, opacity 0.15s ease;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.35s ease;
 }
 
 .taskbar-icon a:hover {
@@ -166,18 +172,17 @@ body {
     padding-bottom: 120px;
 }
 
-.contacts -sect {
+.contacts-sect {
     padding-top: 75px;
+    padding-bottom: 120px;
 }
 
 .about-card {
     margin-left: 110px;
-    height: 544px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
     padding-left: 0;
     padding-right: 0;
@@ -185,11 +190,10 @@ body {
 
 .projects-card {
     margin-left: 110px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
     padding-left: 0;
     padding-right: 0;
@@ -231,12 +235,243 @@ body {
     height: 40px;
 }
 
+.card-text {
+    overflow: auto;
+}
 
+.green-box{
+    height : 60px;
+    width: 400px;
+    background: rgba(173, 241, 162, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+.contact-form-wrap {
+    width: 500px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contact-label {
+    font-size: .85rem;
+    color: #5E3A4B;
+    font-weight: 500;
+}
+
+.contact-input {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: none;
+    font-size: .9rem;
+}
+
+.contact-input:focus {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #D5C8F5;
+    box-shadow: 0 0 0 3px rgba(213, 200, 245, 0.3);
+    outline: none;
+}
+
+.contact-input::placeholder {
+    color: #bbb;
+}
+
+.contact-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.35s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 1);
+}
+
+.contact-status {
+    font-size: .85rem;
+}
+
+.success-checkmark {
+    width: 70px;
+    height: 70px;
+}
+
+.checkmark-svg {
+    width: 70px;
+    height: 70px;
+    animation: checkmark-scale 0.4s ease forwards;
+}
+
+.checkmark-circle {
+    stroke: #28C840;
+    stroke-width: 2;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: checkmark-stroke 0.5s ease forwards;
+}
+
+.checkmark-check {
+    stroke: #28C840;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: checkmark-stroke 0.4s 0.4s ease forwards;
+}
+
+@keyframes checkmark-stroke {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes checkmark-scale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+.contact-info-wrap {
+    width: 500px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info-icon {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20%;
+    height: 42px;
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-info-icon i {
+    font-size: 1.1rem;
+    color: #D5C8F5;
+}
+
+.contact-info-link {
+    text-decoration: none;
+    color: black;
+    transition: color 0.15s ease;
+}
+
+.contact-info-link:hover {
+    color: #5E3A4B;
+}
+
+/* ── Project card hover ── */
 .card {
     width: 370px;
     height: 400px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.4s ease;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.card-text {
-    overflow: auto;
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(94, 58, 75, 0.15);
+}
+
+.card-img-top {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                filter 0.5s ease;
+    object-fit: cover;
+    height: 200px;
+    filter: brightness(0.97);
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.08);
+    filter: brightness(1.04);
+}
+
+.card-body {
+    transition: background 0.4s ease;
+}
+
+.card:hover .card-body {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+
+.contact-btn {
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                background 0.35s ease !important;
+}
+
+
+.tech-stack {
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.35s ease;
+}
+/* ─── Scroll-triggered base states ─── */
+.anim-fade-up,
+.anim-slide-up,
+.anim-fade-left,
+.anim-fade-right,
+.anim-pop,
+.anim-card,
+.anim-title {
+    opacity: 0;
+    transition: opacity 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.anim-fade-up    { transform: translateY(40px); }
+.anim-slide-up   { transform: translateY(60px); }
+.anim-fade-left  { transform: translateX(-40px); }
+.anim-fade-right { transform: translateX(40px); }
+.anim-pop        { transform: scale(0.88); }
+.anim-card       { transform: translateY(50px) scale(0.97); }
+.anim-title      { transform: translateY(24px); }
+
+/* ─── Visible state ─── */
+.anim-in {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* ─── Title shimmer on reveal ─── */
+.anim-title.anim-in {
+    background: linear-gradient(90deg, #5E3A4B 0%, #A080C0 40%, #5E3A4B 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleShimmer 3s linear infinite;
+}
+
+@keyframes titleShimmer {
+    0%   { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
+
+/* ─── Navbar drop on load ─── */
+.navbar-cont {
+    animation: navbarDrop 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes navbarDrop {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
