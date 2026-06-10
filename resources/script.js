@@ -114,12 +114,4 @@ emailjs.init("dTJuo1VbTz3o5lJnL");
 
     document.querySelectorAll('section, .side-sticky').forEach(el => observer.observe(el));
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', () => {
-            const id = link.getAttribute('href');
-            const target = document.querySelector(id);
-            if (!target) return;
-            setTimeout(() => replaySection(target), 750);
-        });
-    });
 })();
