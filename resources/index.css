@@ -1,15 +1,73 @@
 body {
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(160deg, #FFE8F5 0%, #EDD5F7 50%, #C9E8FF 100%);
-    background-size: 300% 300%;
-    animation: gradientShift 12s ease infinite;
+    background: #f5e8ff;
+    position: relative;
+    overflow-x: hidden;
 }
 
-@keyframes gradientShift {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::before {
+    width: 70vw;
+    height: 70vw;
+    background: radial-gradient(circle, #FFD6EE 0%, #EDD5F7 50%, transparent 75%);
+    top: -20vw;
+    left: -15vw;
+    animation: orbDrift1 10s ease-in-out infinite;
+}
+
+body::after {
+    width: 65vw;
+    height: 65vw;
+    background: radial-gradient(circle, #C9E8FF 0%, #D5C8F5 50%, transparent 75%);
+    bottom: -20vw;
+    right: -15vw;
+    animation: orbDrift2 13s ease-in-out infinite;
+}
+
+
+.bg-orb {
+    position: fixed;
+    width: 55vw;
+    height: 55vw;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(circle, #FFF0C8 0%, #FFE8F5 55%, transparent 75%);
+    top: 40vh;
+    left: 25vw;
+    animation: orbDrift3 16s ease-in-out infinite;
+}
+
+@keyframes orbDrift1 {
+    0%   { transform: translate(0, 0) scale(1); }
+    33%  { transform: translate(6vw, 8vh) scale(1.08); }
+    66%  { transform: translate(-4vw, 12vh) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes orbDrift2 {
+    0%   { transform: translate(0, 0) scale(1); }
+    40%  { transform: translate(-8vw, -10vh) scale(1.1); }
+    70%  { transform: translate(5vw, -5vh) scale(0.93); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes orbDrift3 {
+    0%   { transform: translate(0, 0) scale(1); opacity: 0.7; }
+    50%  { transform: translate(5vw, -8vh) scale(1.12); opacity: 1; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
 }
 
 .navbar-cont {
@@ -143,14 +201,20 @@ body {
     transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.35s ease;
 }
 
-.icon:hover {
-    transform: translateX(5px);
+/* Higher specificity so hover beats the .anim-in transform: none reset */
+.vert-cont .icon:hover,
+.vert-cont .icon.anim-in:hover,
+.vert-cont .icon.anim-fade-left:hover {
+    transform: translateX(8px) !important;
     background: rgba(255, 255, 255, 0.9);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                background 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .taskbar-icon a {
     display: inline-flex;
-    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.35s ease;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .taskbar-icon a:hover {
@@ -158,9 +222,13 @@ body {
     opacity: 0.75;
 }
 
-.tech-stack:hover {
-    transform: translateY(-6px);
+.tech-stack:hover,
+.tech-stack.anim-in:hover,
+.tech-stack.anim-pop:hover {
+    transform: translateY(-6px) !important;
     opacity: 0.75;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .about-sect {
@@ -374,13 +442,13 @@ body {
     color: #5E3A4B;
 }
 
-/* ── Project card hover ── */
+
 .card {
     width: 370px;
     height: 400px;
     overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                box-shadow 0.4s ease;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.35s ease;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -406,7 +474,7 @@ body {
 }
 
 .card-body {
-    transition: background 0.4s ease;
+    transition: background 0.35s ease;
 }
 
 .card:hover .card-body {
@@ -424,7 +492,7 @@ body {
     transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 opacity 0.35s ease;
 }
-/* ─── Scroll-triggered base states ─── */
+
 .anim-fade-up,
 .anim-slide-up,
 .anim-fade-left,
@@ -445,13 +513,13 @@ body {
 .anim-card       { transform: translateY(50px) scale(0.97); }
 .anim-title      { transform: translateY(24px); }
 
-/* ─── Visible state ─── */
+
 .anim-in {
     opacity: 1 !important;
     transform: none !important;
 }
 
-/* ─── Title shimmer on reveal ─── */
+
 .anim-title.anim-in {
     background: linear-gradient(90deg, #5E3A4B 0%, #A080C0 40%, #5E3A4B 100%);
     background-size: 200% auto;
@@ -466,7 +534,7 @@ body {
     100% { background-position: -200% center; }
 }
 
-/* ─── Navbar drop on load ─── */
+
 .navbar-cont {
     animation: navbarDrop 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
