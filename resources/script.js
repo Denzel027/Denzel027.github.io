@@ -94,7 +94,6 @@ emailjs.init("dTJuo1VbTz3o5lJnL");
 
     function replaySection(container) {
         const els = container.querySelectorAll(selector);
-
         const all = container.matches(selector) ? [container, ...els] : [...els];
         all.forEach(el => {
             el.classList.remove('anim-in');
@@ -114,4 +113,48 @@ emailjs.init("dTJuo1VbTz3o5lJnL");
 
     document.querySelectorAll('section, .side-sticky').forEach(el => observer.observe(el));
 
+})();
+
+// ── Clock ──
+(function() {
+    const el = document.getElementById("navtime");
+    if (!el) return;
+    const fmt = new Intl.DateTimeFormat(undefined, {
+        weekday: "long",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+    });
+    const tick = () => { el.textContent = fmt.format(new Date()); };
+    tick();
+    setInterval(tick, 30000);
+})();
+
+// ── Mobile Nav Toggle ──
+(function() {
+    const toggle = document.getElementById("navbarToggle");
+    const menu = document.getElementById("mobileNavMenu");
+    if (!toggle || !menu) return;
+    toggle.addEventListener("click", function(e) {
+        e.stopPropagation();
+        const isOpen = menu.classList.contains("show");
+        menu.classList.toggle("show");
+        toggle.querySelector(".navbar-toggler-icon-custom").innerHTML = isOpen ?
+            '<i class="bi bi-list"></i>' :
+            '<i class="bi bi-x-lg"></i>';
+    });
+    // Close on link click
+    menu.querySelectorAll(".nav-link-mobile").forEach(link => {
+        link.addEventListener("click", function() {
+            menu.classList.remove("show");
+            toggle.querySelector(".navbar-toggler-icon-custom").innerHTML = '<i class="bi bi-list"></i>';
+        });
+    });
+    // Close on outside click
+    document.addEventListener("click", function(e) {
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+            menu.classList.remove("show");
+            toggle.querySelector(".navbar-toggler-icon-custom").innerHTML = '<i class="bi bi-list"></i>';
+        }
+    });
 })();

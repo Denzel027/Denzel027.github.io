@@ -543,3 +543,353 @@ body::after {
     from { opacity: 0; transform: translateY(-20px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ─── RESPONSIVE FIXES (added) ─── */
+
+/* desktop: show side nav, hide mobile menu */
+@media (min-width: 992px) {
+    .side-sticky {
+        display: block !important;
+    }
+    .navbar-collapse {
+        display: none !important;
+    }
+    .navbar-toggler {
+        display: none !important;
+    }
+    .about-card,
+    .projects-card {
+        margin-left: 110px;
+        margin-right: 20px;
+    }
+    .about-sect {
+        padding-top: 75px;
+    }
+    .projects-sect {
+        padding-top: 75px;
+        padding-bottom: 120px;
+    }
+    .contacts-sect {
+        padding-top: 75px;
+        padding-bottom: 120px;
+    }
+    .home-content {
+        margin-top: -55px;
+        min-height: 100vh;
+    }
+    .circle-photo {
+        height: 300px;
+        width: 300px;
+    }
+    .abt-photo-card {
+        height: 400px;
+    }
+    .card {
+        height: 400px;
+        max-width: 370px;
+    }
+    .card-img-top {
+        height: 200px;
+    }
+    .contact-form-wrap,
+    .contact-info-wrap {
+        max-width: 500px;
+    }
+    .green-box {
+        max-width: 400px;
+    }
+}
+
+/* tablet / small desktop */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .side-sticky {
+        display: none !important;
+    }
+    .about-card,
+    .projects-card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .about-sect {
+        padding-top: 40px;
+    }
+    .projects-sect {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .contacts-sect {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .home-content {
+        margin-top: 0;
+        min-height: 80vh;
+    }
+    .circle-photo {
+        height: 240px;
+        width: 240px;
+    }
+    .abt-photo-card {
+        height: 300px;
+        max-width: 260px;
+    }
+    .card {
+        height: auto;
+        max-width: 100%;
+        min-height: 320px;
+    }
+    .card-img-top {
+        height: 170px;
+    }
+    .contact-form-wrap,
+    .contact-info-wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+    .green-box {
+        max-width: 360px;
+    }
+}
+
+/* mobile */
+@media (max-width: 767.98px) {
+    .side-sticky {
+        display: none !important;
+    }
+    .about-card,
+    .projects-card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .about-sect {
+        padding-top: 20px;
+    }
+    .projects-sect {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .contacts-sect {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .home-content {
+        margin-top: 0;
+        min-height: 70vh;
+    }
+    .circle-photo {
+        height: 180px;
+        width: 180px;
+    }
+    .abt-photo-card {
+        height: auto;
+        max-height: 260px;
+        width: 100%;
+        max-width: 220px;
+        margin: 0 auto 16px;
+    }
+    .card {
+        height: auto;
+        max-width: 100%;
+        min-height: 280px;
+        margin-bottom: 20px;
+    }
+    .card-img-top {
+        height: 150px;
+    }
+    .contact-form-wrap,
+    .contact-info-wrap {
+        max-width: 100%;
+        width: 100%;
+        padding: 16px !important;
+    }
+    .green-box {
+        max-width: 280px;
+        height: auto;
+        min-height: 48px;
+        padding: 6px 14px;
+        border-radius: 30px;
+    }
+    .green-box p {
+        font-size: 0.8rem;
+        margin: 0;
+    }
+    .taskbar-icon {
+        min-width: 200px;
+        height: 64px;
+        padding: 0 8px;
+    }
+    .taskbar-icon .socials {
+        gap: 12px;
+    }
+    .taskbar-icon .socials img {
+        height: 34px;
+        width: 34px;
+    }
+    .footer {
+        padding: 4px 0 8px;
+    }
+    body {
+        padding-bottom: 80px;
+    }
+    .navbar-toggler {
+        display: block !important;
+    }
+    .navbar-collapse {
+        display: none !important;
+    }
+    .navbar-collapse.show {
+        display: block !important;
+    }
+    .navbar-nav-mobile {
+        position: absolute;
+        top: calc(100% + 6px);
+        right: 0;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-radius: 14px;
+        padding: 12px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        min-width: 180px;
+        z-index: 1050;
+    }
+    .navbar-nav-mobile .nav-link-mobile {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 14px;
+        border-radius: 10px;
+        color: #333;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: background 0.2s ease;
+    }
+    .navbar-nav-mobile .nav-link-mobile:hover {
+        background: rgba(213, 200, 245, 0.3);
+    }
+    .navbar-nav-mobile .nav-link-mobile i {
+        font-size: 1.2rem;
+        color: #D5C8F5;
+        width: 24px;
+        text-align: center;
+    }
+    /* small phones */
+    @media (max-width: 575.98px) {
+        .circle-photo {
+            height: 150px;
+            width: 150px;
+        }
+        .home-content {
+            min-height: 60vh;
+        }
+        .text-content h2 {
+            font-size: 1.4rem;
+        }
+        .btn {
+            font-size: 0.8rem;
+            padding: 5px 16px !important;
+        }
+        .abt-photo-card {
+            max-height: 200px;
+            max-width: 160px;
+        }
+        .about-card .d-flex {
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+        .about-card .d-flex .ms-3 {
+            margin-left: 0 !important;
+            margin-top: 12px;
+        }
+        .tech-stack {
+            width: 100%;
+            max-width: 120px;
+            height: 44px;
+        }
+        .tech-icon {
+            height: 24px;
+        }
+        .tech-stack h6 {
+            font-size: 0.7rem;
+            margin-top: 2px !important;
+        }
+        .card {
+            min-height: 240px;
+        }
+        .card-img-top {
+            height: 120px;
+        }
+        .card-title {
+            font-size: 1rem;
+        }
+        .card-text {
+            font-size: 0.75rem;
+        }
+        .green-box {
+            max-width: 220px;
+            min-height: 40px;
+        }
+        .green-box p {
+            font-size: 0.7rem;
+        }
+        .taskbar-icon {
+            min-width: 160px;
+            height: 56px;
+            padding: 0 6px;
+        }
+        .taskbar-icon .socials {
+            gap: 8px;
+        }
+        .taskbar-icon .socials img {
+            height: 28px;
+            width: 28px;
+        }
+        .navbar-cont {
+            margin: 4px 6px;
+            border-radius: 10px;
+            padding: 4px 8px !important;
+        }
+        .navbar-brand {
+            font-size: 0.85rem;
+        }
+        .nav-right {
+            font-size: 0.7rem;
+        }
+        .nav-logo img {
+            height: 24px !important;
+            width: 24px !important;
+        }
+        .threedots i {
+            font-size: 0.65rem;
+        }
+        .contact-btn {
+            font-size: 0.75rem;
+            padding: 4px 12px !important;
+        }
+        .contact-label {
+            font-size: 0.7rem;
+        }
+        .contact-input {
+            font-size: 0.75rem;
+        }
+        .contacts-sect h2 {
+            font-size: 1.2rem;
+        }
+        .contacts-sect h5 {
+            font-size: 0.8rem;
+        }
+        .navbar-nav-mobile {
+            min-width: 140px;
+            right: 4px;
+            padding: 8px 10px;
+        }
+        .navbar-nav-mobile .nav-link-mobile {
+            font-size: 0.8rem;
+            padding: 6px 10px;
+        }
+        body {
+            padding-bottom: 70px;
+        }
+    }
+}

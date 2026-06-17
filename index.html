@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <link href="resources/images/Vector.png" rel="icon">
-    <link rel="stylesheet" href="/resources/index.css">
+    <link rel="stylesheet" href="resources/index.css">
     <title>Denz Portfolio</title>
 </head>
 
 <body>
-<div class="bg-orb"></div>
+    <div class="bg-orb"></div>
 
     <!-- Navbar Menu -->
     <nav class="navbar navbar-expand-lg navbar-cont p-2 position-sticky top-0">
@@ -33,6 +33,19 @@
             <a class="nav-logo me-3" href="#home">
                 <img src="resources/images/Vector.png" style="height: 30px; width: 30px;" />
             </a>
+        </div>
+        <!-- Hamburger toggle (visible on mobile) -->
+        <button class="navbar-toggler ms-2" type="button" id="navbarToggle" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon-custom"><i class="bi bi-list"></i></span>
+        </button>
+        <!-- Mobile dropdown menu -->
+        <div class="navbar-collapse" id="mobileNavMenu">
+            <div class="navbar-nav-mobile">
+                <a class="nav-link-mobile" href="#home"><i class="bi bi-house-door-fill"></i> Home</a>
+                <a class="nav-link-mobile" href="#about"><i class="bi bi-person-fill"></i> About Me</a>
+                <a class="nav-link-mobile" href="#projects"><i class="bi bi-code-slash"></i> Projects</a>
+                <a class="nav-link-mobile" href="#contacts"><i class="bi bi-telephone-plus-fill"></i> Contact</a>
+            </div>
         </div>
     </nav>
 
@@ -413,26 +426,8 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="resources/script.js"></script>
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    (function () {
-        const el = document.getElementById("navtime");
-        if (!el) return;
-        const fmt = new Intl.DateTimeFormat(undefined, {
-            weekday: "long",
-            hour: "numeric",
-            minute: "2-digit",
-            hour12: true
-        });
-        const tick = () => {
-            el.textContent = fmt.format(new Date());
-        };
-        tick();
-        setInterval(tick, 30_000);
-    })();
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="resources/script.js"></script>
 </html>
