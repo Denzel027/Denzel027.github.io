@@ -34,7 +34,7 @@
                 <img src="resources/images/Vector.png" style="height: 30px; width: 30px;" />
             </a>
         </div>
-        <!-- Hamburger toggle (visible on mobile) -->
+        <!-- Hamburger toggle (hidden on desktop) -->
         <button class="navbar-toggler ms-2" type="button" id="navbarToggle" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon-custom"><i class="bi bi-list"></i></span>
         </button>
@@ -119,9 +119,9 @@
 
 
                     <div class="flex-grow-1 d-flex align-items-center justify-content-center p-3 ms-5">
-                        <div class="d-flex">
+                        <div class="d-flex flex-wrap align-items-center justify-content-center">
                             <img src="resources/images/ako.png" class="abt-photo-card me-3 mt-2 anim-fade-left"></img>
-                            <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="d-flex flex-column justify-content-center align-items-center" style="max-width:600px;">
                                 <h3 class="fredoka fw-bold anim-title">I like building webs.</h3>
                                 <p class="poppins text-center">Hey! I’m Denzel, a designer, developer and aspiring to be
                                     cybersecurity specialist based on Calamba,
@@ -129,8 +129,8 @@
                                     currently taking Bachelor of Science in
                                     Information Technology at Polytechnic University of the Philippines Sto Tomas
                                     campus. Nice to meet you!</p>
-                                <div class="row g-2 justify-content-center align-items-center">
-                                    <div class="col-6 col-md-4 col-lg-auto">
+                                <div class="row g-2 justify-content-center align-items-center w-100">
+                                    <div class="col-6 col-md-4 col-lg-auto d-flex justify-content-center">
                                         <div
                                             class="tech-stack rounded-4 d-flex align-items-center justify-content-center p-1 anim-pop" style="animation-delay:.1s">
                                             <span><img src="resources/images/html.png" class="tech-icon"></span>
@@ -140,7 +140,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-6 col-md-4 col-lg-auto">
+                                    <div class="col-6 col-md-4 col-lg-auto d-flex justify-content-center">
                                         <div
                                             class="tech-stack rounded-4 d-flex align-items-center justify-content-center p-1 anim-pop" style="animation-delay:.2s">
                                             <span><img src="resources/images/css.png" class="tech-icon"></span>
@@ -150,7 +150,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-6 col-md-4 col-lg-auto">
+                                    <div class="col-6 col-md-4 col-lg-auto d-flex justify-content-center">
                                         <div
                                             class="tech-stack rounded-4 d-flex align-items-center justify-content-center p-1 anim-pop" style="animation-delay:.3s">
                                             <span><img src="resources/images/bs.png" class="tech-icon"></span>
@@ -160,7 +160,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-6 col-md-4 col-lg-auto">
+                                    <div class="col-6 col-md-4 col-lg-auto d-flex justify-content-center">
                                         <div
                                             class="tech-stack rounded-4 d-flex align-items-center justify-content-center p-1 anim-pop" style="animation-delay:.4s">
                                             <span><img src="resources/images/sql.png" class="tech-icon"></span>
@@ -170,7 +170,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-6 col-md-4 col-lg-auto">
+                                    <div class="col-6 col-md-4 col-lg-auto d-flex justify-content-center">
                                         <div
                                             class="tech-stack rounded-4 d-flex align-items-center justify-content-center p-1 anim-pop" style="animation-delay:.5s">
                                             <span><img src="resources/images/gh.png" class="tech-icon"></span>
@@ -180,7 +180,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-6 col-md-4 col-lg-auto">
+                                    <div class="col-6 col-md-4 col-lg-auto d-flex justify-content-center">
                                         <div
                                             class="tech-stack rounded-4 d-flex align-items-center justify-content-center p-1 anim-pop" style="animation-delay:.6s">
                                             <span><img src="resources/images/php.png" class="tech-icon"></span>
@@ -223,8 +223,8 @@
                                 Load more
                             </button>
                         </div>
-                        <div class="row px-4 mx-4">
-                            <div class="col">
+                        <div class="row px-4 mx-4 justify-content-center">
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                                 <div class="card rounded-5 anim-card" style="animation-delay:0s">
                                     <img class="card-img-top" src="resources/images/card1.png" alt="Card image">
                                     <div class="card-body p-3">
@@ -234,7 +234,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                                 <div class="card rounded-5 anim-card" style="animation-delay:.15s">
                                     <img class="card-img-top" src="resources/images/card2.png" alt="Card image">
                                     <div class="card-body p-3">
@@ -245,7 +245,7 @@
                                 </div>
                             </div>
 
-                            <div class="col">
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                                 <div class="card rounded-5 anim-card" style="animation-delay:.3s">
                                     <img class="card-img-top" src="resources/images/card3.png" alt="Card image">
                                     <div class="card-body p-3   ">
@@ -259,8 +259,8 @@
                         </div>
 
                         <div class="collapse" id="moreProjects">
-                            <div class="row px-4 mx-4 pt-4">
-                                <div class="col">
+                            <div class="row px-4 mx-4 pt-4 justify-content-center">
+                                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                                     <div class="card rounded-5">
                                         <img class="card-img-top" src="resources/images/card1.png" alt="Card image">
                                         <div class="card-body p-3">
@@ -271,7 +271,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                                     <div class="card rounded-5">
                                         <img class="card-img-top" src="resources/images/card2.png" alt="Card image">
                                         <div class="card-body p-3">
@@ -282,7 +282,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col">
+                                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                                     <div class="card rounded-5">
                                         <img class="card-img-top" src="resources/images/card3.png" alt="Card image">
                                         <div class="card-body p-3   ">
@@ -319,20 +319,20 @@
                     </div>
 
                     <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center p-3 py-5">
-                        <div class="green-box d-flex align-items-center justify-content-center p-4 rounded-pill mb-2 anim-pop">
+                        <div class="green-box d-flex align-items-center justify-content-center rounded-pill mb-2 anim-pop">
                             <div class="d-flex align-items-center p-2">
-                                <i class="bi bi-circle-fill dot-green"></i>
-                                <span><p class="p-3 fw-bold poppins my-2">Available for new opportunities</p></span>
+                                <i class="bi bi-circle-fill dot-green me-2"></i>
+                                <span><p class="fw-bold poppins my-2">Available for new opportunities</p></span>
                             </div>
                         </div>
                         <h2 class="fredoka py-3 anim-title">Let's create our first project together</h2>
                         <h5 class="text-center fw-normal mb-4">I’m currently open to freelance projects, full-time roles and collaborations. Drop a message!</h5>
 
-                        <!-- Contact Cards -->
-                        <div class="d-flex gap-4">
+                        <!-- Contact Cards - now flex-wrap with column on mobile -->
+                        <div class="d-flex flex-wrap gap-4 justify-content-center w-100" style="max-width:1050px;">
 
                             <!-- Contact Info Card -->
-                            <div class="contact-info-wrap p-4 d-flex flex-column justify-content-between anim-fade-left">
+                            <div class="contact-info-wrap p-4 d-flex flex-column justify-content-between anim-fade-left" style="flex:1 1 300px; min-width:280px;">
                                 <div>
                                     <h5 class="fredoka fw-bold mb-1">Contact Info</h5>
                                     <p class="poppins text-muted mb-4" style="font-size:.8rem;">Feel free to reach out through any of these.</p>
@@ -379,7 +379,7 @@
                             </div>
 
                             <!-- Contact Form -->
-                            <div class="contact-form-wrap p-4 anim-fade-right">
+                            <div class="contact-form-wrap p-4 anim-fade-right" style="flex:1 1 300px; min-width:280px;">
                             <div class="mb-3">
                                 <label class="form-label poppins contact-label">Name</label>
                                 <input type="text" id="contact-name" class="form-control contact-input poppins" placeholder="Your name">
@@ -392,7 +392,7 @@
                                 <label class="form-label poppins contact-label">Message</label>
                                 <textarea id="contact-message" class="form-control contact-input poppins" rows="4" placeholder="What's on your mind?"></textarea>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
                                 <p id="contact-status" class="poppins contact-status mb-0"></p>
                                 <button id="contact-btn" class="btn btn-light rounded-pill poppins px-4 contact-btn">
                                     <span id="btn-label">Send Message <i class="bi bi-send-fill ms-1"></i></span>
