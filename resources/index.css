@@ -307,18 +307,27 @@ body::after {
     overflow: auto;
 }
 
-.green-box{
-    height : auto;
+/* ─── FLUID GREEN PILL ─── */
+.green-box {
+    height: auto;
     min-height: 56px;
     width: auto;
     max-width: 400px;
-    padding: 0 20px;
+    padding: 0 24px;
     background: rgba(173, 241, 162, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 40px;
 }
+
+.green-box .pill-text {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    margin: 0;
+}
+
 .contact-form-wrap {
     width: 100%;
     max-width: 500px;
@@ -552,16 +561,14 @@ body::after {
 
 /* ─── RESPONSIVE FIXES ─── */
 
-/* DESKTOP (≥992px) - hide hamburger & mobile menu with maximum force */
+/* DESKTOP (≥992px) - hide hamburger & mobile menu */
 @media (min-width: 992px) {
     .navbar-toggler {
         display: none !important;
     }
-    /* Override Bootstrap's display:flex for navbar-collapse */
     .navbar-expand-lg .navbar-collapse {
         display: none !important;
     }
-    /* Also hide by id to be extra safe */
     #mobileNavMenu {
         display: none !important;
     }
@@ -661,7 +668,6 @@ body::after {
     .green-box {
         max-width: 360px;
     }
-    /* Mobile nav visible */
     .navbar-toggler {
         display: block !important;
     }
@@ -736,7 +742,6 @@ body::after {
         height: 180px;
         width: 180px;
     }
-    /* About photo: remove right margin on mobile */
     .abt-photo-card {
         height: auto;
         max-height: 260px;
@@ -759,15 +764,17 @@ body::after {
         width: 100%;
         padding: 16px !important;
     }
+    /* fluid pill on mobile */
     .green-box {
-        max-width: 280px;
-        min-height: 48px;
-        padding: 6px 14px;
-        border-radius: 30px;
+        max-width: 90%;
+        min-height: 44px;
+        padding: 0 16px;
+        border-radius: 40px;
     }
-    .green-box p {
+    .green-box .pill-text {
         font-size: 0.8rem;
-        margin: 0;
+        white-space: normal;
+        text-align: center;
     }
     .taskbar-icon {
         min-width: 200px;
@@ -885,10 +892,11 @@ body::after {
             font-size: 0.75rem;
         }
         .green-box {
-            max-width: 220px;
-            min-height: 40px;
+            max-width: 95%;
+            min-height: 38px;
+            padding: 0 12px;
         }
-        .green-box p {
+        .green-box .pill-text {
             font-size: 0.7rem;
         }
         .taskbar-icon {
@@ -951,3 +959,38 @@ body::after {
         }
     }
 }
+
+.about-card .flex-grow-1.d-flex {
+
+    gap: 1.5rem;
+}
+
+@media (min-width: 992px) {
+    .about-card .flex-grow-1.d-flex {
+        flex-direction: row !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .about-card .flex-grow-1.d-flex {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .abt-photo-card {
+        margin-right: 0 !important;
+    }
+}
+
+.abt-photo-card {
+    height: 400px;
+    width: auto;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ... rest of the CSS (green pill, cards, etc.) ... */
