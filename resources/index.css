@@ -552,14 +552,20 @@ body::after {
 
 /* ─── RESPONSIVE FIXES ─── */
 
-/* desktop: hide hamburger and mobile menu */
+/* DESKTOP (≥992px) - hide hamburger & mobile menu with maximum force */
 @media (min-width: 992px) {
     .navbar-toggler {
         display: none !important;
     }
-    .navbar-collapse {
+    /* Override Bootstrap's display:flex for navbar-collapse */
+    .navbar-expand-lg .navbar-collapse {
         display: none !important;
     }
+    /* Also hide by id to be extra safe */
+    #mobileNavMenu {
+        display: none !important;
+    }
+
     .side-sticky {
         display: block !important;
     }
@@ -606,7 +612,7 @@ body::after {
     }
 }
 
-/* tablet / small desktop */
+/* TABLET (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .side-sticky {
         display: none !important;
@@ -655,6 +661,7 @@ body::after {
     .green-box {
         max-width: 360px;
     }
+    /* Mobile nav visible */
     .navbar-toggler {
         display: block !important;
     }
@@ -700,7 +707,7 @@ body::after {
     }
 }
 
-/* mobile */
+/* MOBILE (≤767px) */
 @media (max-width: 767.98px) {
     .side-sticky {
         display: none !important;
@@ -729,12 +736,13 @@ body::after {
         height: 180px;
         width: 180px;
     }
+    /* About photo: remove right margin on mobile */
     .abt-photo-card {
         height: auto;
         max-height: 260px;
         width: 100%;
         max-width: 220px;
-        margin: 0 auto 16px;
+        margin: 0 auto 16px !important;
     }
     .card {
         height: auto;
@@ -822,6 +830,7 @@ body::after {
         width: 24px;
         text-align: center;
     }
+
     /* small phones */
     @media (max-width: 575.98px) {
         .circle-photo {
@@ -841,6 +850,7 @@ body::after {
         .abt-photo-card {
             max-height: 200px;
             max-width: 160px;
+            margin: 0 auto 12px !important;
         }
         .about-card .d-flex {
             flex-direction: column !important;
