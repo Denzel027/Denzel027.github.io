@@ -29,7 +29,7 @@ emailjs.init("dTJuo1VbTz3o5lJnL");
             message: message,
             title: "Portfolio Contact"
         }).then(() => {
-            // Show success overlay inside the form card
+
             formWrap.style.position = "relative";
             formWrap.style.overflow = "hidden";
 
@@ -61,17 +61,16 @@ emailjs.init("dTJuo1VbTz3o5lJnL");
             `;
             formWrap.appendChild(overlay);
 
-            // Fade in
+
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => { overlay.style.opacity = "1"; });
             });
 
-            // Clear fields
+
             document.getElementById("contact-name").value = "";
             document.getElementById("contact-email").value = "";
             document.getElementById("contact-message").value = "";
 
-            // Fade out after 3s
             setTimeout(() => {
                 overlay.style.opacity = "0";
                 setTimeout(() => overlay.remove(), 400);
@@ -115,8 +114,8 @@ emailjs.init("dTJuo1VbTz3o5lJnL");
 
 })();
 
-// ── Clock ──
-(function() {
+
+(function () {
     const el = document.getElementById("navtime");
     if (!el) return;
     const fmt = new Intl.DateTimeFormat(undefined, {
@@ -130,12 +129,23 @@ emailjs.init("dTJuo1VbTz3o5lJnL");
     setInterval(tick, 30000);
 })();
 
-// ── Mobile Nav Toggle ──
-(function() {
+function loadProjects() {
+    const cardImage1 = document.getElementById("card-img-1");
+    const cardTitle1 = document.getElementById("card-title-1");
+    const cardDesc1 = document.getElementById("card-desc-1");
+
+    cardImage1.src = 'resources/images/ckyg.png';
+    cardTitle1.innerHTML = "Can you afford it or not?";
+    cardDesc1.innerHTML = "A website design that helps you decide whether to purchase something or not.";
+}
+
+
+
+(function () {
     const toggle = document.getElementById("navbarToggle");
     const menu = document.getElementById("mobileNavMenu");
     if (!toggle || !menu) return;
-    toggle.addEventListener("click", function(e) {
+    toggle.addEventListener("click", function (e) {
         e.stopPropagation();
         const isOpen = menu.classList.contains("show");
         menu.classList.toggle("show");
@@ -143,15 +153,15 @@ emailjs.init("dTJuo1VbTz3o5lJnL");
             '<i class="bi bi-list"></i>' :
             '<i class="bi bi-x-lg"></i>';
     });
-    // Close on link click
+
     menu.querySelectorAll(".nav-link-mobile").forEach(link => {
-        link.addEventListener("click", function() {
+        link.addEventListener("click", function () {
             menu.classList.remove("show");
             toggle.querySelector(".navbar-toggler-icon-custom").innerHTML = '<i class="bi bi-list"></i>';
         });
     });
     // Close on outside click
-    document.addEventListener("click", function(e) {
+    document.addEventListener("click", function (e) {
         if (!menu.contains(e.target) && !toggle.contains(e.target)) {
             menu.classList.remove("show");
             toggle.querySelector(".navbar-toggler-icon-custom").innerHTML = '<i class="bi bi-list"></i>';
