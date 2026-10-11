@@ -160,11 +160,46 @@ function loadProjects() {
             toggle.querySelector(".navbar-toggler-icon-custom").innerHTML = '<i class="bi bi-list"></i>';
         });
     });
-    // Close on outside click
+
     document.addEventListener("click", function (e) {
         if (!menu.contains(e.target) && !toggle.contains(e.target)) {
             menu.classList.remove("show");
             toggle.querySelector(".navbar-toggler-icon-custom").innerHTML = '<i class="bi bi-list"></i>';
         }
     });
+})();
+
+(function () {
+    const main = document.getElementById("projectsMain");
+    const wd = document.getElementById("projectsWD");
+    const mainBtns = document.getElementById("mainBtns");
+    const wdBtns = document.getElementById("wdBtns");
+    const title = document.getElementById("projectsTitle");
+    const more = document.getElementById("moreProjects");
+    if (!main || !wd) return;
+
+    function replayCards(container) {
+        container.querySelectorAll(".anim-card").forEach(el => {
+            el.classList.remove("anim-in");
+            void el.offsetWidth;
+            const delay = (parseFloat(el.style.animationDelay) || 0) * 1000;
+            setTimeout(() => el.classList.add("anim-in"), delay + 80);
+        });
+    }
+
+    function show(view) {
+        const showWD = view === "wd";
+        main.classList.toggle("d-none", showWD);
+        mainBtns.classList.toggle("d-none", showWD);
+        wd.classList.toggle("d-none", !showWD);
+        wdBtns.classList.toggle("d-none", !showWD);
+        title.textContent = showWD ? "WebDev Projects" : "Curated Projects";
+        if (showWD && more && more.classList.contains("show")) {
+            bootstrap.Collapse.getOrCreateInstance(more).hide();
+        }
+        replayCards(showWD ? wd : main);
+    }
+
+    document.getElementById("wdBtn").addEventListener("click", () => show("wd"));
+    document.getElementById("backBtn").addEventListener("click", () => show("main"));
 })();
