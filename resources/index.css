@@ -51,23 +51,56 @@ body::after {
 }
 
 @keyframes orbDrift1 {
-    0%   { transform: translate(0, 0) scale(1); }
-    33%  { transform: translate(6vw, 8vh) scale(1.08); }
-    66%  { transform: translate(-4vw, 12vh) scale(0.95); }
-    100% { transform: translate(0, 0) scale(1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(6vw, 8vh) scale(1.08);
+    }
+
+    66% {
+        transform: translate(-4vw, 12vh) scale(0.95);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
 }
 
 @keyframes orbDrift2 {
-    0%   { transform: translate(0, 0) scale(1); }
-    40%  { transform: translate(-8vw, -10vh) scale(1.1); }
-    70%  { transform: translate(5vw, -5vh) scale(0.93); }
-    100% { transform: translate(0, 0) scale(1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    40% {
+        transform: translate(-8vw, -10vh) scale(1.1);
+    }
+
+    70% {
+        transform: translate(5vw, -5vh) scale(0.93);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
 }
 
 @keyframes orbDrift3 {
-    0%   { transform: translate(0, 0) scale(1); opacity: 0.7; }
-    50%  { transform: translate(5vw, -8vh) scale(1.12); opacity: 1; }
-    100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate(5vw, -8vh) scale(1.12);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.7;
+    }
 }
 
 .navbar-cont {
@@ -208,13 +241,13 @@ body::after {
     transform: translateX(8px) !important;
     background: rgba(255, 255, 255, 0.9);
     transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                background 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        background 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .taskbar-icon a {
     display: inline-flex;
     transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .taskbar-icon a:hover {
@@ -228,7 +261,7 @@ body::after {
     transform: translateY(-6px) !important;
     opacity: 0.75;
     transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .about-sect {
@@ -275,7 +308,7 @@ body::after {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.bar > div {
+.bar>div {
     flex-direction: row !important;
 }
 
@@ -411,13 +444,23 @@ body::after {
 }
 
 @keyframes checkmark-stroke {
-    to { stroke-dashoffset: 0; }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 @keyframes checkmark-scale {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
+
 .contact-info-wrap {
     width: 100%;
     max-width: 500px;
@@ -465,7 +508,7 @@ body::after {
     height: 400px;
     overflow: hidden;
     transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                box-shadow 0.35s ease;
+        box-shadow 0.35s ease;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -479,7 +522,7 @@ body::after {
 
 .card-img-top {
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                filter 0.5s ease;
+        filter 0.5s ease;
     object-fit: cover;
     height: 200px;
     filter: brightness(0.97);
@@ -501,13 +544,13 @@ body::after {
 
 .contact-btn {
     transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                background 0.35s ease !important;
+        background 0.35s ease !important;
 }
 
 
 .tech-stack {
     transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                opacity 0.35s ease;
+        opacity 0.35s ease;
 }
 
 .anim-fade-up,
@@ -519,16 +562,36 @@ body::after {
 .anim-title {
     opacity: 0;
     transition: opacity 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.anim-fade-up    { transform: translateY(40px); }
-.anim-slide-up   { transform: translateY(60px); }
-.anim-fade-left  { transform: translateX(-40px); }
-.anim-fade-right { transform: translateX(40px); }
-.anim-pop        { transform: scale(0.88); }
-.anim-card       { transform: translateY(50px) scale(0.97); }
-.anim-title      { transform: translateY(24px); }
+.anim-fade-up {
+    transform: translateY(40px);
+}
+
+.anim-slide-up {
+    transform: translateY(60px);
+}
+
+.anim-fade-left {
+    transform: translateX(-40px);
+}
+
+.anim-fade-right {
+    transform: translateX(40px);
+}
+
+.anim-pop {
+    transform: scale(0.88);
+}
+
+.anim-card {
+    transform: translateY(50px) scale(0.97);
+}
+
+.anim-title {
+    transform: translateY(24px);
+}
 
 
 .anim-in {
@@ -547,8 +610,13 @@ body::after {
 }
 
 @keyframes titleShimmer {
-    0%   { background-position: 200% center; }
-    100% { background-position: -200% center; }
+    0% {
+        background-position: 200% center;
+    }
+
+    100% {
+        background-position: -200% center;
+    }
 }
 
 
@@ -557,427 +625,537 @@ body::after {
 }
 
 @keyframes navbarDrop {
-    from { opacity: 0; transform: translateY(-20px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wd-frame-wrap {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    height: 200px;
+    width: 100%;
+}
+
+.wd-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 800px;
+    border: 0;
+    transform-origin: top left;
+    background: #fff;
 }
 
 /* ─── RESPONSIVE FIXES ─── */
 
 /* DESKTOP (≥992px) - hide hamburger & mobile menu */
 @media (min-width: 992px) {
-    .navbar-toggler {
-        display: none !important;
-    }
-    .navbar-expand-lg .navbar-collapse {
-        display: none !important;
-    }
-    #mobileNavMenu {
-        display: none !important;
-    }
-
-    .side-sticky {
-        display: block !important;
-    }
-    .about-card,
-    .projects-card {
-        margin-left: 110px;
-        margin-right: 20px;
-    }
-    .about-sect {
-        padding-top: 75px;
-    }
-    .projects-sect {
-        padding-top: 75px;
-        padding-bottom: 120px;
-    }
-    .contacts-sect {
-        padding-top: 75px;
-        padding-bottom: 120px;
-    }
-    .home-content {
-        margin-top: -55px;
-        min-height: 100vh;
-    }
-    .circle-photo {
-        height: 300px;
-        width: 300px;
-    }
-    .abt-photo-card {
-        height: 400px;
-    }
-    .card {
-        height: 400px;
-        max-width: 370px;
-    }
-    .card-img-top {
-        height: 200px;
-    }
-    .contact-form-wrap,
-    .contact-info-wrap {
-        max-width: 500px;
-    }
-    .green-box {
-        max-width: 400px;
-    }
-}
-
-/* TABLET (768px - 991px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .side-sticky {
-        display: none !important;
-    }
-    .about-card,
-    .projects-card {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-    .about-sect {
-        padding-top: 40px;
-    }
-    .projects-sect {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-    .contacts-sect {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-    .home-content {
-        margin-top: 0;
-        min-height: 80vh;
-    }
-    .circle-photo {
-        height: 240px;
-        width: 240px;
-    }
-    .abt-photo-card {
-        height: 300px;
-        max-width: 260px;
-    }
-    .card {
-        height: auto;
-        max-width: 100%;
-        min-height: 320px;
-    }
-    .card-img-top {
-        height: 170px;
-    }
-    .contact-form-wrap,
-    .contact-info-wrap {
-        max-width: 100%;
-        width: 100%;
-    }
-    .green-box {
-        max-width: 360px;
-    }
-    .navbar-toggler {
-        display: block !important;
-    }
-    .navbar-collapse {
-        display: none !important;
-    }
-    .navbar-collapse.show {
-        display: block !important;
-    }
-    .navbar-nav-mobile {
-        position: absolute;
-        top: calc(100% + 6px);
-        right: 0;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border-radius: 14px;
-        padding: 12px 16px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        min-width: 180px;
-        z-index: 1050;
-    }
-    .navbar-nav-mobile .nav-link-mobile {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 8px 14px;
-        border-radius: 10px;
-        color: #333;
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: background 0.2s ease;
-    }
-    .navbar-nav-mobile .nav-link-mobile:hover {
-        background: rgba(213, 200, 245, 0.3);
-    }
-    .navbar-nav-mobile .nav-link-mobile i {
-        font-size: 1.2rem;
-        color: #D5C8F5;
-        width: 24px;
-        text-align: center;
-    }
-}
-
-/* MOBILE (≤767px) */
-@media (max-width: 767.98px) {
-    .side-sticky {
-        display: none !important;
-    }
-    .about-card,
-    .projects-card {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-    .about-sect {
-        padding-top: 20px;
-    }
-    .projects-sect {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    .contacts-sect {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    .home-content {
-        margin-top: 0;
-        min-height: 70vh;
-    }
-    .circle-photo {
-        height: 180px;
-        width: 180px;
-    }
-    .abt-photo-card {
-        height: auto;
-        max-height: 260px;
-        width: 100%;
-        max-width: 220px;
-        margin: 0 auto 16px !important;
-    }
-    .card {
-        height: auto;
-        max-width: 100%;
-        min-height: 280px;
-        margin-bottom: 20px;
-    }
-    .card-img-top {
-        height: 150px;
-    }
-    .contact-form-wrap,
-    .contact-info-wrap {
-        max-width: 100%;
-        width: 100%;
-        padding: 16px !important;
-    }
-    /* fluid pill on mobile */
-    .green-box {
-        max-width: 90%;
-        min-height: 44px;
-        padding: 0 16px;
-        border-radius: 40px;
-    }
-    .green-box .pill-text {
-        font-size: 0.8rem;
-        white-space: normal;
-        text-align: center;
-    }
-    .taskbar-icon {
-        min-width: 200px;
-        height: 64px;
-        padding: 0 8px;
-    }
-    .taskbar-icon .socials {
-        gap: 12px;
-    }
-    .taskbar-icon .socials img {
-        height: 34px;
-        width: 34px;
-    }
-    .footer {
-        padding: 4px 0 8px;
-    }
-    body {
-        padding-bottom: 80px;
-    }
-    .navbar-toggler {
-        display: block !important;
-    }
-    .navbar-collapse {
-        display: none !important;
-    }
-    .navbar-collapse.show {
-        display: block !important;
-    }
-    .navbar-nav-mobile {
-        position: absolute;
-        top: calc(100% + 6px);
-        right: 0;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border-radius: 14px;
-        padding: 12px 16px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        min-width: 180px;
-        z-index: 1050;
-    }
-    .navbar-nav-mobile .nav-link-mobile {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 8px 14px;
-        border-radius: 10px;
-        color: #333;
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: background 0.2s ease;
-    }
-    .navbar-nav-mobile .nav-link-mobile:hover {
-        background: rgba(213, 200, 245, 0.3);
-    }
-    .navbar-nav-mobile .nav-link-mobile i {
-        font-size: 1.2rem;
-        color: #D5C8F5;
-        width: 24px;
-        text-align: center;
-    }
-
-    /* small phones */
-    @media (max-width: 575.98px) {
-        .circle-photo {
-            height: 150px;
-            width: 150px;
+        .navbar-toggler {
+            display: none !important;
         }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: none !important;
+        }
+
+        #mobileNavMenu {
+            display: none !important;
+        }
+
+        .side-sticky {
+            display: block !important;
+        }
+
+        .about-card,
+        .projects-card {
+            margin-left: 110px;
+            margin-right: 20px;
+        }
+
+        .about-sect {
+            padding-top: 75px;
+        }
+
+        .projects-sect {
+            padding-top: 75px;
+            padding-bottom: 120px;
+        }
+
+        .contacts-sect {
+            padding-top: 75px;
+            padding-bottom: 120px;
+        }
+
         .home-content {
-            min-height: 60vh;
+            margin-top: -55px;
+            min-height: 100vh;
         }
-        .text-content h2 {
-            font-size: 1.4rem;
+
+        .circle-photo {
+            height: 300px;
+            width: 300px;
         }
-        .btn {
-            font-size: 0.8rem;
-            padding: 5px 16px !important;
-        }
+
         .abt-photo-card {
-            max-height: 200px;
-            max-width: 160px;
-            margin: 0 auto 12px !important;
+            height: 400px;
         }
-        .about-card .d-flex {
-            flex-direction: column !important;
-            align-items: center !important;
-        }
-        .about-card .d-flex .ms-3 {
-            margin-left: 0 !important;
-            margin-top: 12px;
-        }
-        .tech-stack {
-            width: 100%;
-            max-width: 120px;
-            height: 44px;
-        }
-        .tech-icon {
-            height: 24px;
-        }
-        .tech-stack h6 {
-            font-size: 0.7rem;
-            margin-top: 2px !important;
-        }
+
         .card {
-            min-height: 240px;
+            height: 400px;
+            max-width: 370px;
         }
+
         .card-img-top {
-            height: 120px;
+            height: 200px;
         }
-        .card-title {
-            font-size: 1rem;
+
+        .contact-form-wrap,
+        .contact-info-wrap {
+            max-width: 500px;
         }
-        .card-text {
-            font-size: 0.75rem;
-        }
+
         .green-box {
-            max-width: 95%;
-            min-height: 38px;
-            padding: 0 12px;
+            max-width: 400px;
         }
-        .green-box .pill-text {
-            font-size: 0.7rem;
+    }
+
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .side-sticky {
+            display: none !important;
         }
-        .taskbar-icon {
-            min-width: 160px;
-            height: 56px;
-            padding: 0 6px;
+
+        .about-card,
+        .projects-card {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
         }
-        .taskbar-icon .socials {
-            gap: 8px;
+
+        .about-sect {
+            padding-top: 40px;
         }
-        .taskbar-icon .socials img {
-            height: 28px;
-            width: 28px;
+
+        .projects-sect {
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
-        .navbar-cont {
-            margin: 4px 6px;
-            border-radius: 10px;
-            padding: 4px 8px !important;
+
+        .contacts-sect {
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
-        .navbar-brand {
-            font-size: 0.85rem;
+
+        .home-content {
+            margin-top: 0;
+            min-height: 80vh;
         }
-        .nav-right {
-            font-size: 0.7rem;
+
+        .circle-photo {
+            height: 240px;
+            width: 240px;
         }
-        .nav-logo img {
-            height: 24px !important;
-            width: 24px !important;
+
+        .abt-photo-card {
+            height: 300px;
+            max-width: 260px;
         }
-        .threedots i {
-            font-size: 0.65rem;
+
+        .card {
+            height: auto;
+            max-width: 100%;
+            min-height: 320px;
         }
-        .contact-btn {
-            font-size: 0.75rem;
-            padding: 4px 12px !important;
+
+        .card-img-top {
+            height: 170px;
         }
-        .contact-label {
-            font-size: 0.7rem;
+
+        .contact-form-wrap,
+        .contact-info-wrap {
+            max-width: 100%;
+            width: 100%;
         }
-        .contact-input {
-            font-size: 0.75rem;
+
+        .green-box {
+            max-width: 360px;
         }
-        .contacts-sect h2 {
-            font-size: 1.2rem;
+
+        .navbar-toggler {
+            display: block !important;
         }
-        .contacts-sect h5 {
-            font-size: 0.8rem;
+
+        .navbar-collapse {
+            display: none !important;
         }
+
+        .navbar-collapse.show {
+            display: block !important;
+        }
+
         .navbar-nav-mobile {
-            min-width: 140px;
-            right: 4px;
-            padding: 8px 10px;
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 14px;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+            z-index: 1050;
         }
+
         .navbar-nav-mobile .nav-link-mobile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .navbar-nav-mobile .nav-link-mobile:hover {
+            background: rgba(213, 200, 245, 0.3);
+        }
+
+        .navbar-nav-mobile .nav-link-mobile i {
+            font-size: 1.2rem;
+            color: #D5C8F5;
+            width: 24px;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .side-sticky {
+            display: none !important;
+        }
+
+        .about-card,
+        .projects-card {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .about-sect {
+            padding-top: 20px;
+        }
+
+        .projects-sect {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .contacts-sect {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .home-content {
+            margin-top: 0;
+            min-height: 70vh;
+        }
+
+        .circle-photo {
+            height: 180px;
+            width: 180px;
+        }
+
+        .abt-photo-card {
+            height: auto;
+            max-height: 260px;
+            width: 100%;
+            max-width: 220px;
+            margin: 0 auto 16px !important;
+        }
+
+        .card {
+            height: auto;
+            max-width: 100%;
+            min-height: 280px;
+            margin-bottom: 20px;
+        }
+
+        .card-img-top {
+            height: 150px;
+        }
+
+        .contact-form-wrap,
+        .contact-info-wrap {
+            max-width: 100%;
+            width: 100%;
+            padding: 16px !important;
+        }
+
+        .green-box {
+            max-width: 90%;
+            min-height: 44px;
+            padding: 0 16px;
+            border-radius: 40px;
+        }
+
+        .green-box .pill-text {
             font-size: 0.8rem;
-            padding: 6px 10px;
+            white-space: normal;
+            text-align: center;
         }
+
+        .taskbar-icon {
+            min-width: 200px;
+            height: 64px;
+            padding: 0 8px;
+        }
+
+        .taskbar-icon .socials {
+            gap: 12px;
+        }
+
+        .taskbar-icon .socials img {
+            height: 34px;
+            width: 34px;
+        }
+
+        .footer {
+            padding: 4px 0 8px;
+        }
+
         body {
-            padding-bottom: 70px;
+            padding-bottom: 80px;
+        }
+
+        .navbar-toggler {
+            display: block !important;
+        }
+
+        .navbar-collapse {
+            display: none !important;
+        }
+
+        .navbar-collapse.show {
+            display: block !important;
+        }
+
+        .navbar-nav-mobile {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 14px;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+            z-index: 1050;
+        }
+
+        .navbar-nav-mobile .nav-link-mobile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .navbar-nav-mobile .nav-link-mobile:hover {
+            background: rgba(213, 200, 245, 0.3);
+        }
+
+        .navbar-nav-mobile .nav-link-mobile i {
+            font-size: 1.2rem;
+            color: #D5C8F5;
+            width: 24px;
+            text-align: center;
+        }
+
+
+        @media (max-width: 575.98px) {
+            .circle-photo {
+                height: 150px;
+                width: 150px;
+            }
+
+            .home-content {
+                min-height: 60vh;
+            }
+
+            .text-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .btn {
+                font-size: 0.8rem;
+                padding: 5px 16px !important;
+            }
+
+            .abt-photo-card {
+                max-height: 200px;
+                max-width: 160px;
+                margin: 0 auto 12px !important;
+            }
+
+            .about-card .d-flex {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            .about-card .d-flex .ms-3 {
+                margin-left: 0 !important;
+                margin-top: 12px;
+            }
+
+            .tech-stack {
+                width: 100%;
+                max-width: 120px;
+                height: 44px;
+            }
+
+            .tech-icon {
+                height: 24px;
+            }
+
+            .tech-stack h6 {
+                font-size: 0.7rem;
+                margin-top: 2px !important;
+            }
+
+            .card {
+                min-height: 240px;
+            }
+
+            .card-img-top {
+                height: 120px;
+            }
+
+            .card-title {
+                font-size: 1rem;
+            }
+
+            .card-text {
+                font-size: 0.75rem;
+            }
+
+            .green-box {
+                max-width: 95%;
+                min-height: 38px;
+                padding: 0 12px;
+            }
+
+            .green-box .pill-text {
+                font-size: 0.7rem;
+            }
+
+            .taskbar-icon {
+                min-width: 160px;
+                height: 56px;
+                padding: 0 6px;
+            }
+
+            .taskbar-icon .socials {
+                gap: 8px;
+            }
+
+            .taskbar-icon .socials img {
+                height: 28px;
+                width: 28px;
+            }
+
+            .navbar-cont {
+                margin: 4px 6px;
+                border-radius: 10px;
+                padding: 4px 8px !important;
+            }
+
+            .navbar-brand {
+                font-size: 0.85rem;
+            }
+
+            .nav-right {
+                font-size: 0.7rem;
+            }
+
+            .nav-logo img {
+                height: 24px !important;
+                width: 24px !important;
+            }
+
+            .threedots i {
+                font-size: 0.65rem;
+            }
+
+            .contact-btn {
+                font-size: 0.75rem;
+                padding: 4px 12px !important;
+            }
+
+            .contact-label {
+                font-size: 0.7rem;
+            }
+
+            .contact-input {
+                font-size: 0.75rem;
+            }
+
+            .contacts-sect h2 {
+                font-size: 1.2rem;
+            }
+
+            .contacts-sect h5 {
+                font-size: 0.8rem;
+            }
+
+            .navbar-nav-mobile {
+                min-width: 140px;
+                right: 4px;
+                padding: 8px 10px;
+            }
+
+            .navbar-nav-mobile .nav-link-mobile {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            body {
+                padding-bottom: 70px;
+            }
         }
     }
-}
 
-.abt-photo-card {
-    height: 400px;
-    width: auto;
-    object-fit: contain;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-}
-
-@media (max-width: 991.98px) {
     .abt-photo-card {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        height: 400px;
+        width: auto;
+        object-fit: contain;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 12px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
     }
-}
+
+    @media (max-width: 991.98px) {
+        .abt-photo-card {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }

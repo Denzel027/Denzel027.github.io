@@ -203,3 +203,19 @@ function loadProjects() {
     document.getElementById("wdBtn").addEventListener("click", () => show("wd"));
     document.getElementById("backBtn").addEventListener("click", () => show("main"));
 })();
+
+(function () {
+    function fit() {
+        document.querySelectorAll('.wd-frame-wrap').forEach(function (w) {
+            var f = w.querySelector('.wd-frame'), W = w.clientWidth, H = w.clientHeight;
+            if (!W || !H) return;
+            var scale = W / 1280;
+            f.style.height = (H / scale) + 'px';
+            f.style.transform = 'scale(' + scale + ')';
+        });
+    }
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    var b = document.getElementById('wdBtn');
+    if (b) b.addEventListener('click', function () { setTimeout(fit, 50); setTimeout(fit, 400); });
+})();
